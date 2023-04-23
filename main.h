@@ -27,6 +27,12 @@ int print_char(va_list arg);
 int print_string(va_list arg);
 int print_percent(va_list);
 int print_integer(va_list ap);
+int print_binary(va_list);
+
+/*Helper Functions*/
+unsigned int helper_len(unsigned int, int);
+char *rev_string(char *);
+void helper_write(char *str);
 
 int _printf(const char *format, ...);
 
