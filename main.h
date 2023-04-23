@@ -4,6 +4,7 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <stdbool.h>
 
 /**
 * struct args_handle - defines a structure
@@ -28,11 +29,17 @@ int print_string(va_list arg);
 int print_percent(va_list);
 int print_integer(va_list ap);
 int print_binary(va_list);
+int print_unsgined_number(va_list ap);
+int print_octal(va_list ap);
+int print_hex(va_list ap, bool lc);
+int print_LHex(va_list ap);
+int print_UHex(va_list ap);
 
 /*Helper Functions*/
 unsigned int helper_len(unsigned int, int);
 char *rev_string(char *);
 void helper_write(char *str);
+int hex_check(int num, bool lc);
 
 int _printf(const char *format, ...);
 
