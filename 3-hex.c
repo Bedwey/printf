@@ -11,15 +11,15 @@
 
 int hex_check(int num, bool lc)
 {
-        char *hex = "abcdef";
-        char *Hex = "ABCDEF";
+	char *hex = "abcdef";
+	char *Hex = "ABCDEF";
 
-        num = num - 10;
-        if (lc)
-                return (hex[num]);
-        else
-                return (Hex[num]);
-        return (0);
+	num = num - 10;
+	if (lc)
+		return (hex[num]);
+	else
+		return (Hex[num]);
+	return (0);
 }
 
 /**

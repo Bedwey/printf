@@ -76,12 +76,16 @@ unsigned int helper_len(unsigned int num, int base)
  * written on standard output.
  *
  * @str: String to parse
+ *
+ * Return: lenght of printed string
  */
 
-void helper_write(char *str)
+int helper_write(char *str)
 {
 	int i;
 
 	for (i = 0; str[i] != '\0'; i++)
 		_write_char(str[i]);
+
+	return (i);
 }

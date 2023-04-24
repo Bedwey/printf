@@ -84,19 +84,20 @@ char *hexa_replacer(char *s)
 int non_printable(va_list ap)
 {
 	char *s;
-    int	len = 0;
+	int len;
 
-
+	len = 0;
 	s = va_arg(ap, char*);
+
 	if (s)
-    {
-        s = hexa_replacer(s);
-        helper_write(s);
-    }
+	{
+		s = hexa_replacer(s);
+		len = helper_write(s);
+	}
 	else
-    {
+	{
 		len += _write_char('0');
-    }
-    
-    return (len);
+	}
+
+	return (len);
 }

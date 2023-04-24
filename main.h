@@ -39,7 +39,7 @@ int non_printable(va_list ap);
 /*Helper Functions*/
 unsigned int helper_len(unsigned int, int);
 char *rev_string(char *);
-void helper_write(char *str);
+int helper_write(char *str);
 int hex_check(int num, bool lc);
 int print_unsgined_number(unsigned int);
 char *hexa_converter(unsigned int num, int base);
