@@ -89,14 +89,18 @@ int non_printable(va_list ap)
 	len = 0;
 	s = va_arg(ap, char*);
 
+	if (*s == 0)
+		return (_write_char('0'));
+
+	if (*s < 1)
+		return (-1);
+
+	len = helper_len(*s, 2);
+
 	if (s)
 	{
 		s = hexa_replacer(s);
-		len = helper_write(s);
-	}
-	else
-	{
-		len += _write_char('0');
+		helper_write(s);
 	}
 
 	return (len);
