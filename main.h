@@ -34,6 +34,7 @@ int print_octal(va_list ap);
 int print_hex(va_list ap, bool lc);
 int print_LHex(va_list ap);
 int print_UHex(va_list ap);
+int non_printable(va_list ap);
 
 /*Helper Functions*/
 unsigned int helper_len(unsigned int, int);
@@ -41,6 +42,8 @@ char *rev_string(char *);
 void helper_write(char *str);
 int hex_check(int num, bool lc);
 int print_unsgined_number(unsigned int);
+char *hexa_converter(unsigned int num, int base);
+char *hexa_replacer(char *s);
 
 int _printf(const char *format, ...);
 

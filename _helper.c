@@ -10,6 +10,7 @@
  *
  * Return: a pointer to dest.
  */
+
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
 	unsigned int i;
@@ -73,6 +74,7 @@ unsigned int helper_len(unsigned int num, int base)
 /**
  * helper_write - sends characters to be
  * written on standard output.
+ *
  * @str: String to parse
  */
 

@@ -23,7 +23,8 @@ int _printf(const char *format, ...)
 			{"u", unsigned_integer},
 			{"o", print_octal},
 			{"x", print_LHex},
-			{"X", print_UHex}
+			{"X", print_UHex},
+			{"S", non_printable}
 		};
 
 	if (format == NULL)
