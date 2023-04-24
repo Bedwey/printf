@@ -83,26 +83,3 @@ void helper_write(char *str)
 	for (i = 0; str[i] != '\0'; i++)
 		_write_char(str[i]);
 }
-
-/**
- * hex_check - Checks which hex function is calling it
- *
- * @num: Number to convert into letter
- * @lc: Is Lower Case
- *
- * Return: Ascii value for a letter
- */
-
-int hex_check(int num, bool lc)
-{
-	char *hex = "abcdef";
-	char *Hex = "ABCDEF";
-
-	num = num - 10;
-	if (lc)
-		return (hex[num]);
-	else
-		return (Hex[num]);
-	return (0);
-}
-

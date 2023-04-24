@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 			{"d", print_integer},
 			{"i", print_integer},
 			{"b", print_binary},
-			{"u", print_unsgined_number},
+			{"u", unsigned_integer},
 			{"o", print_octal},
 			{"x", print_LHex},
 			{"X", print_UHex}

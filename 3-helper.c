@@ -1,14 +1,15 @@
 #include "main.h"
 
+
 /**
  * print_unsgined_number - Prints an unsigned number
  *
- * @ap: List of all the arguments passed to the program
+ * @n: unsigned integer to be printed
  *
  * Return: The amount of numbers printed
  */
 
-int print_unsgined_number(va_list ap)
+int print_unsgined_number(unsigned int n)
 {
 	int div;
 	int len;
@@ -17,12 +18,9 @@ int print_unsgined_number(va_list ap)
 	div = 1;
 	len = 0;
 
-	num = va_arg(ap, unsigned int);
+	num = n;
 
-	if (num < 1)
-		return (-1);
-
-	for (; num / div > 9;)
+	for (; num / div > 9; )
 		div *= 10;
 
 	for (; div != 0; )
@@ -34,6 +32,29 @@ int print_unsgined_number(va_list ap)
 
 	return (len);
 }
+
+/**
+ * unsigned_integer - Prints Unsigned integers
+ *
+ *  @ap: List of all the arguments passed to the program
+ *
+ *  Return: a count of the numbers
+ */
+
+int unsigned_integer(va_list ap)
+{
+	unsigned int num;
+
+	num = va_arg(ap, unsigned int);
+
+	if (num == 0)
+		return (print_unsgined_number(num));
+
+	if (num < 1)
+		return (-1);
+	return (print_unsgined_number(num));
+}
+
 
 /**
  * print_octal - Prints the numeric representation of a number in octal base
@@ -80,77 +101,4 @@ int print_octal(va_list ap)
 	free(octal_rep);
 	free(rev_str);
 	return (len);
-}
-
-
-/**
- * print_hex - Prints a representation of a decimal number lowercase
- *
- * @ap: List of the arguments passed to the function
- * @lc: Is Lower Case
- * Return: Number of characters printed
- */
-
-int print_hex(va_list ap, bool lc)
-{
-	unsigned int num;
-	int len;
-	int rem_num;
-	char *hex_rep;
-	char *rev_hex;
-
-	num = va_arg(ap, unsigned int);
-
-	if (num == 0)
-		return (_write_char('0'));
-	if (num < 1)
-		return (-1);
-	len = helper_len(num, 16);
-	hex_rep = malloc(sizeof(char) * len + 1);
-	if (hex_rep == NULL)
-		return (-1);
-	for (len = 0; num > 0; len++)
-	{
-		rem_num = num % 16;
-		if (rem_num > 9)
-		{
-			rem_num = hex_check(rem_num, lc);
-			hex_rep[len] = rem_num;
-		}
-		else
-			hex_rep[len] = rem_num + 48;
-		num = num / 16;
-	}
-	hex_rep[len] = '\0';
-	rev_hex = rev_string(hex_rep);
-	if (rev_hex == NULL)
-		return (-1);
-	helper_write(rev_hex);
-	free(hex_rep);
-	free(rev_hex);
-	return (len);
-}
-
-/**
- * print_LHex - Prints a representation of a decimal number lowercase
- *
- * @ap: List of the arguments passed to the function
- * Return: Number of characters printed
- */
-
-int print_LHex(va_list ap)
-{
-	return (print_hex(ap, true));
-}
-
-/**
- * print_UHex - Prints a representation of a decimal number uppercase
- *
- * @ap: List of the arguments passed to the function
- * Return: Number of characters printed
- */
-
-int print_UHex(va_list ap)
-{
-	return (print_hex(ap, false));
 }
