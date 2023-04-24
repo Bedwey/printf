@@ -24,7 +24,8 @@ int _printf(const char *format, ...)
 			{"o", print_octal},
 			{"x", print_LHex},
 			{"X", print_UHex},
-			{"S", non_printable}
+			{"S", non_printable},
+			{NULL, NULL}
 		};
 
 	if (format == NULL)
