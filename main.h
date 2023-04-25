@@ -47,6 +47,7 @@ int hex_check(int num, bool lc);
 int print_unsgined_number(unsigned int);
 char *hexa_converter(unsigned int num, int base);
 char *hexa_replacer(char *s);
+int flager(const char *format, int *i);
 
 int _printf(const char *format, ...);
 
