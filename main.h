@@ -35,6 +35,7 @@ int print_hex(va_list ap, bool lc);
 int print_LHex(va_list ap);
 int print_UHex(va_list ap);
 int non_printable(va_list ap);
+int print_reverse(va_list ap);
 
 /*Helper Functions*/
 unsigned int helper_len(unsigned int, int);
