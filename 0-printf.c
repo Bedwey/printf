@@ -26,6 +26,7 @@ int _printf(const char *format, ...)
 			{"X", print_UHex},
 			{"S", non_printable},
 			{"r", print_reverse},
+			{"R", rot13},
 			{NULL, NULL}
 		};
 
